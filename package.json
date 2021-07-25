@@ -2,7 +2,7 @@
   "name": "stackoverflow-vscode-theme",
   "displayName": "Stackoverflow Theme",
   "description": "Stackoverflow theme for VS Code",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "preview": true,
   "icon": "stackoverflow-icon.png",
   "publisher": "Donfreddy",
