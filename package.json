@@ -1,0 +1,24 @@
+{
+  "name": "stackoverflow-vscode-theme",
+  "displayName": "Stackoverflow Theme",
+  "description": "Stackoverflow theme for VS Code",
+  "version": "0.0.1",
+  "preview": true,
+  "publisher": "Donfreddy",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.58.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Stackoverflow Theme",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Stackoverflow Theme-color-theme.json"
+      }
+    ]
+  }
+}
