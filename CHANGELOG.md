@@ -1,3 +1,7 @@
+# Changelog
+
+All notable changes to the "stackoverflow-vscode-theme" extension will be documented in this file.
+
 ## 1.0.2
 
 - Add icon
