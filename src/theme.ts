@@ -24,8 +24,8 @@ export default function getTheme(params: Params) {
     name: params.name,
     type: params.theme,
     colors: {
-      "editor.foreground": color,
-      "editor.background": color.dark,
+      // "editor.foreground": color,
+      // "editor.background": color.dark,
       "activityBarBadge.background": color.orange[0],
     },
     tokenColors: [
