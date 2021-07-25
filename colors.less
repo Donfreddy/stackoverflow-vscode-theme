@@ -1,0 +1,618 @@
+//
+//  STACK OVERFLOW
+//  CONSTANTS -- COLORS
+//
+//  This CSS comes from Stacks, our CSS & Pattern library for rapidly building
+//  Stack Overflow. For documentation of all these classes and how to contribute,
+//  visit https://stackoverflow.design/
+//
+//  ============================================================================
+//  $   Legacy Less color variables
+//  ----------------------------------------------------------------------------
+//  --  Primary Colors
+@white: #fff;
+@black: #0c0d0e;
+@orange: #f48024;
+
+//  --  Accent Colors
+@yellow: #fbf2d4;
+@green: #5eba7d;
+@blue: #0077cc;
+@powder: #e1ecf4;
+@red: #d1383d;
+@fog: #f7f8f8;
+
+// Black
+@black-025: #fafafb;
+@black-050: #eff0f1;
+@black-075: #e4e6e8;
+@black-100: #d6d9dc;
+@black-150: #c8ccd0;
+@black-200: #bbc0c4;
+@black-300: #9fa6ad;
+@black-350: #9199a1;
+@black-400: #848d95;
+@black-500: #6a737c;
+@black-600: #535a60;
+@black-700: #3c4146;
+@black-750: #2f3337;
+@black-800: #242729;
+@black-900: @black;
+
+// Orange
+@orange-050: #fff7f2;
+@orange-100: #fee3cf;
+@orange-200: #fcd0ad;
+@orange-300: #f7aa6d;
+@orange-400: @orange;
+@orange-500: #f2720c;
+@orange-600: #da670b;
+@orange-700: #bd5c00;
+@orange-800: #a35200;
+@orange-900: #874600;
+
+// Blue
+@blue-050: #f2f9ff;
+@blue-100: #cfeafe;
+@blue-200: #addafc;
+@blue-300: #6cbbf7;
+@blue-400: #379fef;
+@blue-500: #0095ff;
+@blue-600: @blue;
+@blue-700: #0064bd;
+@blue-800: #0054a3;
+@blue-900: #004487;
+
+// Powder
+@powder-050: #f4f8fb;
+@powder-100: @powder;
+@powder-200: #d1e5f1;
+@powder-300: #b3d3ea;
+@powder-400: #a0c7e4;
+@powder-500: #7aa7c7;
+@powder-600: #5b8db1;
+@powder-700: #39739d;
+@powder-800: #2c5777;
+@powder-900: #1e3c52;
+
+// Green
+@green-025: #eef8f1;
+@green-050: #dcf0e2;
+@green-100: #cae8d4;
+@green-200: #a6d9b7;
+@green-300: #82ca9a;
+@green-400: @green;
+@green-500: #48a868;
+@green-600: #3d8f58;
+@green-700: #2f6f44;
+@green-800: #29603b;
+@green-900: #1e472c;
+
+// Yellow
+@yellow-050: #fdf7e3;
+@yellow-100: @yellow;
+@yellow-200: #f1e5bc;
+@yellow-300: #e6d178;
+@yellow-400: #e9c63f;
+@yellow-500: #ddb624;
+@yellow-600: #cea51b;
+@yellow-700: #b89516;
+@yellow-800: #9f8010;
+@yellow-900: #826a0b;
+
+// Red
+@red-050: #fdf3f4;
+@red-100: #f9d3d7;
+@red-200: #f4b4bb;
+@red-300: #e87c87;
+@red-400: #de535e;
+@red-500: @red;
+@red-600: #c02d2e;
+@red-700: #ac2726;
+@red-800: #942121;
+@red-900: #7a1819;
+
+//  $  BADGES
+//  ----------------------------------------------------------------------------
+@gold: #ffcc01;
+@gold-lighter: #fff4d1;
+@gold-darker: #f1b600;
+
+@silver: #b4b8bc;
+@silver-lighter: #e8e8e8;
+@silver-darker: #9a9c9f;
+
+@bronze: #caa789;
+@bronze-lighter: #f2e9e1;
+@bronze-darker: #ab825f;
+
+//  $  RINGS
+//  ----------------------------------------------------------------------------
+@focus-ring: fade(@blue-500, 15%);
+@focus-ring-success: fade(@green-200, 40%);
+@focus-ring-warning: fade(@yellow-400, 40%);
+@focus-ring-error: fade(@red-600, 15%);
+@focus-ring-muted: fade(@black-800, 10%);
+
+//  $  SHADOWS
+//  ----------------------------------------------------------------------------
+@bs-sm: 0 1px 2px rgba(0, 0, 0, 0.05), 0 1px 4px rgba(0, 0, 0, 0.05), 0 2px 8px rgba(0, 0, 0, 0.05);
+@bs-md: 0 1px 3px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(0, 0, 0, 0.06), 0 3px 8px rgba(0, 0, 0, 0.09);
+@bs-lg: 0 1px 4px rgba(0, 0, 0, 0.09), 0 3px 8px rgba(0, 0, 0, 0.09), 0 4px 13px rgba(0, 0, 0, 0.13);
+
+//  $  SCROLLBARS
+//  ----------------------------------------------------------------------------
+@scrollbar: rgba(0, 0, 0, 0.2);
+
+//  ============================================================================
+//  $   CSS Variable Colors
+//  ----------------------------------------------------------------------------
+
+.generate-calculated-themed-variables(@primary, @designation: primary, @theme: base) {
+    // Split into h/s/l/a values
+    --theme-@{theme}-@{designation}-color-h: hue(@primary);
+    --theme-@{theme}-@{designation}-color-s: saturation(@primary);
+    --theme-@{theme}-@{designation}-color-l: lightness(@primary);
+
+    // Split into r/g/b values
+    --theme-@{theme}-@{designation}-color-r: red(@primary);
+    --theme-@{theme}-@{designation}-color-g: green(@primary);
+    --theme-@{theme}-@{designation}-color-b: blue(@primary);
+}
+
+.generate-themed-variables(@theme: theme) {
+    // Primary color
+    // Split into h/s/l/a values
+    --theme-primary-color-h: var(~"--@{theme}-primary-color-h", var(--theme-base-primary-color-h));
+    --theme-primary-color-s: var(~"--@{theme}-primary-color-s", var(--theme-base-primary-color-s));
+    --theme-primary-color-l: var(~"--@{theme}-primary-color-l", var(--theme-base-primary-color-l));
+
+    // Split into r/g/b values
+    --theme-primary-color-r: var(~"--@{theme}-primary-color-r", var(--theme-base-primary-color-r));
+    --theme-primary-color-g: var(~"--@{theme}-primary-color-g", var(--theme-base-primary-color-g));
+    --theme-primary-color-b: var(~"--@{theme}-primary-color-b", var(--theme-base-primary-color-b));
+
+    // Secondary color
+    // Split into h/s/l/a values
+    --theme-secondary-color-h: var(~"--@{theme}-secondary-color-h", var(--theme-base-secondary-color-h));
+    --theme-secondary-color-s: var(~"--@{theme}-secondary-color-s", var(--theme-base-secondary-color-s));
+    --theme-secondary-color-l: var(~"--@{theme}-secondary-color-l", var(--theme-base-secondary-color-l));
+
+    // Split into r/g/b values
+    --theme-secondary-color-r: var(~"--@{theme}-secondary-color-r", var(--theme-base-secondary-color-r));
+    --theme-secondary-color-g: var(~"--@{theme}-secondary-color-g", var(--theme-base-secondary-color-g));
+    --theme-secondary-color-b: var(~"--@{theme}-secondary-color-b", var(--theme-base-secondary-color-b));
+}
+
+//  --  Light mode
+.light-colors() {
+    --white: @white;
+    --black: @black;
+    --orange: @orange;
+    --yellow: @yellow;
+    --green: @green;
+    --blue: @blue;
+    --powder: @powder;
+    --red: @red;
+
+    // Black
+    --black-025: @black-025;
+    --black-050: @black-050;
+    --black-075: @black-075;
+    --black-100: @black-100;
+    --black-150: @black-150;
+    --black-200: @black-200;
+    --black-300: @black-300;
+    --black-350: @black-350;
+    --black-400: @black-400;
+    --black-500: @black-500;
+    --black-600: @black-600;
+    --black-700: @black-700;
+    --black-750: @black-750;
+    --black-800: @black-800;
+    --black-900: @black-900;
+
+    // Orange
+    --orange-050: @orange-050;
+    --orange-100: @orange-100;
+    --orange-200: @orange-200;
+    --orange-300: @orange-300;
+    --orange-400: @orange-400;
+    --orange-500: @orange-500;
+    --orange-600: @orange-600;
+    --orange-700: @orange-700;
+    --orange-800: @orange-800;
+    --orange-900: @orange-900;
+
+    // Blue
+    --blue-050: @blue-050;
+    --blue-100: @blue-100;
+    --blue-200: @blue-200;
+    --blue-300: @blue-300;
+    --blue-400: @blue-400;
+    --blue-500: @blue-500;
+    --blue-600: @blue-600;
+    --blue-700: @blue-700;
+    --blue-800: @blue-800;
+    --blue-900: @blue-900;
+
+    // Powder
+    --powder-050: @powder-050;
+    --powder-100: @powder-100;
+    --powder-200: @powder-200;
+    --powder-300: @powder-300;
+    --powder-400: @powder-400;
+    --powder-500: @powder-500;
+    --powder-600: @powder-600;
+    --powder-700: @powder-700;
+    --powder-800: @powder-800;
+    --powder-900: @powder-900;
+
+    // Green
+    --green-025: @green-025;
+    --green-050: @green-050;
+    --green-100: @green-100;
+    --green-200: @green-200;
+    --green-300: @green-300;
+    --green-400: @green-400;
+    --green-500: @green-500;
+    --green-600: @green-600;
+    --green-700: @green-700;
+    --green-800: @green-800;
+    --green-900: @green-900;
+
+    // Yellow
+    --yellow-050: @yellow-050;
+    --yellow-100: @yellow-100;
+    --yellow-200: @yellow-200;
+    --yellow-300: @yellow-300;
+    --yellow-400: @yellow-400;
+    --yellow-500: @yellow-500;
+    --yellow-600: @yellow-600;
+    --yellow-700: @yellow-700;
+    --yellow-800: @yellow-800;
+    --yellow-900: @yellow-900;
+
+    // Red
+    --red-050: @red-050;
+    --red-100: @red-100;
+    --red-200: @red-200;
+    --red-300: @red-300;
+    --red-400: @red-400;
+    --red-500: @red-500;
+    --red-600: @red-600;
+    --red-700: @red-700;
+    --red-800: @red-800;
+    --red-900: @red-900;
+
+    // Gold
+    --gold: @gold;
+    --gold-lighter: @gold-lighter;
+    --gold-darker: @gold-darker;
+
+    // Silver
+    --silver: @silver;
+    --silver-lighter: @silver-lighter;
+    --silver-darker: @silver-darker;
+
+    // Bronze
+    --bronze: @bronze;
+    --bronze-lighter: @bronze-lighter;
+    --bronze-darker: @bronze-darker;
+
+    // Font colors
+    --fc-dark: @black-900;
+    --fc-medium: @black-700;
+    --fc-light: @black-500;
+
+    // Focus rings
+    --focus-ring-success: @focus-ring-success;
+    --focus-ring-warning: @focus-ring-warning;
+    --focus-ring-error: @focus-ring-error;
+    --focus-ring-muted: @focus-ring-muted;
+
+    // Shadows
+    --bs-sm: @bs-sm;
+    --bs-md: @bs-md;
+    --bs-lg: @bs-lg;
+
+    // Scrollbars
+    --scrollbar: @scrollbar;
+
+    // Syntax highlighting
+    --highlight-bg: #f6f6f6; // Between black-025 and black-050
+    --highlight-color: @black-750; // AAA 11.78
+    --highlight-comment: #656e77; // ~black-500 AA 4.80
+    --highlight-punctuation: var(--black-600); // AA 6.48
+    --highlight-namespace: #b75501; // Custom orange AA 4.51
+    --highlight-attribute: #015692; // Custom blue AAA 7.25
+    --highlight-literal: #b75501; // Custom orange AA 4.51
+    --highlight-symbol: #803378; // Custom purple AAA 7.30
+    --highlight-keyword: #015692; // Custom blue AAA 7.07
+    --highlight-variable: #54790d; // Custom green AAA 7.25
+    --highlight-addition: @green-700; // AA 5.59
+    --highlight-deletion: @red-600; // AA 5.31
+}
+
+.light-themed-colors() {
+    // Reassemble as a single hsl value
+    --theme-primary-color: .assemble-color(theme-primary-color)[];
+
+    // Steps
+    --theme-primary-900: .native-darken(theme-primary-color, 26)[];
+    --theme-primary-800: .native-darken(theme-primary-color, 21)[];
+    --theme-primary-700: .native-darken(theme-primary-color, 16)[];
+    --theme-primary-600: .native-darken(theme-primary-color, 10)[];
+    --theme-primary-500: .native-darken(theme-primary-color, 5)[];
+    --theme-primary-400: var(--theme-primary-color);
+    --theme-primary-350: .native-tint(theme-primary-color, 20)[];
+    --theme-primary-300: .native-tint(theme-primary-color, 35)[];
+    --theme-primary-200: .native-tint(theme-primary-color, 48)[];
+    --theme-primary-150: .native-tint(theme-primary-color, 65)[];
+    --theme-primary-100: .native-tint(theme-primary-color, 78)[];
+    --theme-primary-075: .native-tint(theme-primary-color, 85)[];
+    --theme-primary-050: .native-tint(theme-primary-color, 92)[];
+    --theme-primary-025: .native-tint(theme-primary-color, 96)[];
+
+    // Reassemble as a single hsl value
+    --theme-secondary-color: .assemble-color(theme-secondary-color)[];
+
+    // Steps
+    --theme-secondary-900: .native-darken(theme-secondary-color, 26)[];
+    --theme-secondary-800: .native-darken(theme-secondary-color, 21)[];
+    --theme-secondary-700: .native-darken(theme-secondary-color, 16)[];
+    --theme-secondary-600: .native-darken(theme-secondary-color, 10)[];
+    --theme-secondary-500: .native-darken(theme-secondary-color, 5)[];
+    --theme-secondary-400: var(--theme-secondary-color);
+    --theme-secondary-350: .native-tint(theme-secondary-color, 20)[];
+    --theme-secondary-300: .native-tint(theme-secondary-color, 35)[];
+    --theme-secondary-200: .native-tint(theme-secondary-color, 48)[];
+    --theme-secondary-150: .native-tint(theme-secondary-color, 65)[];
+    --theme-secondary-100: .native-tint(theme-secondary-color, 78)[];
+    --theme-secondary-075: .native-tint(theme-secondary-color, 85)[];
+    --theme-secondary-050: .native-tint(theme-secondary-color, 92)[];
+    --theme-secondary-025: .native-tint(theme-secondary-color, 96)[];
+
+    // Fades
+    --focus-ring: .native-fade(theme-secondary-color, 15)[];
+
+    // TODO
+    --theme-body-font-color: var(--black-800);
+}
+
+//  --  Dark mode
+.dark-colors() {
+    --white: #2d2d2d;
+    --black: #fff;
+
+    // Black
+    --black-025: #393939;
+    --black-050: #3d3d3d;
+    --black-075: #404345;
+    --black-100: #4a4e51;
+    --black-150: #555a5e;
+    --black-200: #697075;
+    --black-300: #7d848d;
+    --black-350: #959ca3;
+    --black-400: #9fa6ad;
+    --black-500: #acb2b8;
+    --black-600: #c4c8cc;
+    --black-700: #cfd2d6;
+    --black-750: #dadee0;
+    --black-800: #e7e8eb;
+    --black-900: #f2f2f3;
+
+    // Orange
+    --orange-050: #473c33;
+    --orange-100: #5e4433;
+    --orange-200: #8d5a2f;
+    --orange-300: #cc7525;
+    --orange-400: #f48024;
+    --orange-500: #ff901e;
+    --orange-600: #ffa95e;
+    --orange-700: #f8b682;
+    --orange-800: #fcd6b9;
+    --orange-900: #fee7d6;
+
+    // Blue
+    --blue-050: #233e52;
+    --blue-100: #25445f;
+    --blue-200: #295070;
+    --blue-300: #2b5f8a;
+    --blue-400: #3070ab;
+    --blue-500: #378ad3;
+    --blue-600: #3ca4ff;
+    --blue-700: #81c4f8;
+    --blue-800: #b8dffd;
+    --blue-900: #d5ecfd;
+
+    // Powder
+    --powder-050: #414648;
+    --powder-100: #3e4a52;
+    --powder-200: #43525f;
+    --powder-300: #4c6071;
+    --powder-400: #577489;
+    --powder-500: #688eac;
+    --powder-600: #7badd3;
+    --powder-700: #9cc3db;
+    --powder-800: #cde1ee;
+    --powder-900: #e5f3ff;
+
+    // Green
+    --green-025: #2e4233;
+    --green-050: #344b3a;
+    --green-100: #3d6048;
+    --green-200: #487455;
+    --green-300: #4d815c;
+    --green-400: #5a9e6f;
+    --green-500: #63b47c;
+    --green-600: #76c490;
+    --green-700: #93d0a8;
+    --green-800: #b3dec1;
+    --green-900: #d0eada;
+
+    // Yellow
+    --yellow-050: #464236;
+    --yellow-100: #524b38;
+    --yellow-200: #675c37;
+    --yellow-300: #7e6f3a;
+    --yellow-400: #9e883b;
+    --yellow-500: #bf9f37;
+    --yellow-600: #dab941;
+    --yellow-700: #f1d056;
+    --yellow-800: #f8df7a;
+    --yellow-900: #fcedaf;
+
+    // Red
+    --red-050: #572f32;
+    --red-100: #723738;
+    --red-200: #873f3e;
+    --red-300: #9b4544;
+    --red-400: #b24d49;
+    --red-500: #c4524f;
+    --red-600: #d25d5d;
+    --red-700: #de7176;
+    --red-800: #e7929a;
+    --red-900: #f2c1c7;
+
+    // Gold
+    --gold: @gold;
+    --gold-lighter: #5e553c;
+    --gold-darker: #f1b600;
+
+    // Silver
+    --silver: @silver;
+    --silver-lighter: #424242;
+    --silver-darker: #9a9c9f;
+
+    // Bronze
+    --bronze: @bronze;
+    --bronze-lighter: #4d433b;
+    --bronze-darker: #ab825f;
+
+    // Font colors
+    --fc-dark: var(--black-900);
+    --fc-medium: var(--black-700);
+    --fc-light: var(--black-500);
+
+    // Focus rings
+    --focus-ring-success: fade(#487455, 40%); // @green-200
+    --focus-ring-warning: fade(#9e883b, 40%); // @yellow-400
+    --focus-ring-error: fade(#c4524f, 30%); // @red-500
+    --focus-ring-muted: fade(#e7e8eb, 10%); // @black-800
+
+    // Shadows
+    --bs-sm: 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.1), 0 2px 8px rgba(0, 0, 0, 0.1);
+    --bs-md: 0 1px 3px rgba(0, 0, 0, 0.11), 0 2px 6px rgba(0, 0, 0, 0.11), 0 3px 8px rgba(0, 0, 0, 0.14);
+    --bs-lg: 0 1px 4px rgba(0, 0, 0, 0.14), 0 3px 8px rgba(0, 0, 0, 0.14), 0 4px 13px rgba(0, 0, 0, 0.18);
+
+    // Scrollbars
+    --scrollbar: rgba(255, 255, 255, 0.2);
+
+    // Syntax highlighting
+    --highlight-bg: #1c1b1b;
+    --highlight-color: @white; // AAA 17.19
+    --highlight-comment: #999; // AA 6.03
+    --highlight-punctuation: #ccc; // AAA 10.70
+    --highlight-namespace: #f08d49; // orange-700 AAA 7.05
+    --highlight-attribute: #88aece; // Custom powder blue AAA 7.63
+    --highlight-literal: #f08d49; // orange-700 AAA 7.05
+    --highlight-symbol: #c59bc1; // Custom purple AAA 7.23
+    --highlight-keyword: #88aece; // Custom powder blue AAA 7.63
+    --highlight-variable: #b5bd68;
+    --highlight-addition: var(--green-600); // AAA 8.21
+    --highlight-deletion: var(--red-700); // AA 5.51
+}
+
+.dark-themed-colors() {
+    // Reassemble as a single hsl value
+    --theme-primary-color: .assemble-color(theme-primary-color)[];
+
+    // Reassemble as a single hsl value
+    --theme-secondary-color: .assemble-color(theme-secondary-color)[];
+
+    // Primary Theming
+    --theme-primary-025: .native-darken-desaturate(theme-primary-color, 17, 82)[];
+    --theme-primary-050: .native-darken-desaturate(theme-primary-color, 15, 47)[];
+    --theme-primary-075: .native-darken-desaturate(theme-primary-color, 13, 39)[];
+    --theme-primary-100: .native-darken-desaturate(theme-primary-color, 11, 32)[];
+    --theme-primary-150: .native-darken-desaturate(theme-primary-color, 9, 23)[];
+    --theme-primary-200: .native-darken-desaturate(theme-primary-color, 7, 15)[];
+    --theme-primary-300: .native-darken-desaturate(theme-primary-color, 5, 7)[];
+    --theme-primary-350: var(--theme-primary-color);
+    --theme-primary-400: .native-tint(theme-primary-color, 21)[];
+    --theme-primary-500: .native-tint(theme-primary-color, 36)[];
+    --theme-primary-600: .native-tint(theme-primary-color, 51)[];
+    --theme-primary-700: .native-tint(theme-primary-color, 66)[];
+    --theme-primary-800: .native-tint(theme-primary-color, 81)[];
+    --theme-primary-900: .native-tint(theme-primary-color, 96)[];
+
+    // Secondary Theming
+    --theme-secondary-025: .native-darken-desaturate(theme-secondary-color, 17, 82)[];
+    --theme-secondary-050: .native-darken-desaturate(theme-secondary-color, 15, 47)[];
+    --theme-secondary-075: .native-darken-desaturate(theme-secondary-color, 13, 39)[];
+    --theme-secondary-100: .native-darken-desaturate(theme-secondary-color, 11, 32)[];
+    --theme-secondary-150: .native-darken-desaturate(theme-secondary-color, 9, 23)[];
+    --theme-secondary-200: .native-darken-desaturate(theme-secondary-color, 7, 15)[];
+    --theme-secondary-300: .native-darken-desaturate(theme-secondary-color, 5, 7)[];
+    --theme-secondary-350: var(--theme-secondary-color);
+    --theme-secondary-400: .native-tint(theme-secondary-color, 21)[];
+    --theme-secondary-500: .native-tint(theme-secondary-color, 36)[];
+    --theme-secondary-600: .native-tint(theme-secondary-color, 51)[];
+    --theme-secondary-700: .native-tint(theme-secondary-color, 66)[];
+    --theme-secondary-800: .native-tint(theme-secondary-color, 81)[];
+    --theme-secondary-900: .native-tint(theme-secondary-color, 96)[];
+
+    // Fades
+    --focus-ring: .native-fade(theme-secondary-color, 25)[];
+
+    // TODO
+    --theme-body-font-color: var(--black-800);
+}
+
+// rules shared between .theme-dark and .theme-system w/ prefers-color-scheme: dark
+.theme-dark-rules() {
+    .dark-colors();
+
+    //.generate-themed-variables(theme-dark);
+
+    &,
+    & .themed {
+        .generate-themed-variables(theme-dark);
+        // add in the themed "native mixins", making sure to scope to the child .themed elements so they don't use the parent's values
+        .dark-themed-colors();
+    }
+}
+
+:root {
+    // specify the default colors in less, then deconstruct them
+    // this keeps the hsl/rgb variables below in sync, but consumers will need to set each variable separately
+    @defaultPrimaryColor: @orange;
+    @defaultSecondaryColor: @blue;
+    .generate-calculated-themed-variables(@defaultPrimaryColor, primary);
+    .generate-calculated-themed-variables(@defaultSecondaryColor, secondary);
+}
+
+body:not(.theme-dark),
+body.theme-dark .theme-light__forced,
+body.theme-system .theme-light__forced {
+    .light-colors();
+
+    &,
+    & .themed {
+        .generate-themed-variables(theme-light);
+        // add in the themed "native mixins", making sure to scope to the child .themed elements so they don't use the parent's values
+        .light-themed-colors();
+    }
+}
+
+body.theme-dark,
+body:not(.theme-dark) .theme-dark__forced {
+    .theme-dark-rules();
+}
+
+body.theme-system {
+    @media (prefers-color-scheme: dark) {
+        .theme-dark-rules();
+    }
+}
