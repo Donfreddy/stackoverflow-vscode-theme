@@ -1,0 +1,133 @@
+{
+  "scale": {
+    "white": "#fff",
+    "black": [
+      "#242729",
+      "#2d2d2d",
+      "#393939",
+      "#3d3d3d",
+      "#404345",
+      "#4a4e51",
+      "#555a5e",
+      "#697075",
+      "#7d848d",
+      "#959ca3",
+      "#9fa6ad",
+      "#acb2b8",
+      "#c4c8cc",
+      "#cfd2d6",
+      "#dadee0",
+      "#e7e8eb",
+      "#f2f2f3"
+    ],
+    "orange": [
+      "#473c33",
+      "#5e4433",
+      "#8d5a2f",
+      "#cc7525",
+      "#f48024",
+      "#ff901e",
+      "#ffa95e",
+      "#f8b682",
+      "#fcd6b9",
+      "#fee7d6"
+    ],
+    "blue": [
+      "#233e52",
+      "#25445f",
+      "#295070",
+      "#2b5f8a",
+      "#3070ab",
+      "#378ad3",
+      "#3ca4ff",
+      "#81c4f8",
+      "#b8dffd",
+      "#d5ecfd"
+    ],
+    "powder": [
+      "#414648",
+      "#3e4a52",
+      "#43525f",
+      "#4c6071",
+      "#577489",
+      "#688eac",
+      "#7badd3",
+      "#9cc3db",
+      "#cde1ee",
+      "#e5f3ff"
+    ],
+    "green": [
+      "#2e4233",
+      "#344b3a",
+      "#3d6048",
+      "#487455",
+      "#4d815c",
+      "#5a9e6f",
+      "#63b47c",
+      "#76c490",
+      "#93d0a8",
+      "#b3dec1",
+      "#d0eada"
+    ],
+    "yellow": [
+      "#464236 ",
+      "#524b38 ",
+      "#675c37 ",
+      "#7e6f3a ",
+      "#9e883b ",
+      "#bf9f37 ",
+      "#dab941 ",
+      "#f1d056 ",
+      "#f8df7a ",
+      "#fcedaf "
+    ],
+    "red": [
+      "#572f32",
+      "#723738",
+      "#873f3e",
+      "#9b4544",
+      "#b24d49",
+      "#c4524f",
+      "#d25d5d",
+      "#de7176",
+      "#e7929a",
+      "#f2c1c7"
+    ]
+  },
+  "syntax": {
+    "bg": "#1c1b1b",
+    "color": "#fff",
+    "comment": "#BBBBBB4D",
+    "punctuation": "#ccc",
+    "namespace": "#f08d49",
+    "attribute": "#88aece",
+    "literat": "#f08d49",
+    "symbol": "#c59bc1",
+    "keyword": "#88aece",
+    "variable": "#b5bd68",
+    "addition": "#3d8f58",
+    "deletion": "#ac2726"
+  },
+  "fontColor": {
+    "dart": "#0c0cd0e",
+    "medium": "#3c4146",
+    "light": "#6a737c"
+  },
+  "rings": {
+    "success": "#487455",
+    "warning": "#9e883b",
+    "error": "#c4524f",
+    "muted": "#e7e8eb"
+  },
+  "badges": {
+    "gold": "#ffcc01",
+    "goldLighter": "#5e553c",
+    "goldDarker": "#f1b600",
+    "silver": "#b4b8bc",
+    "silverLighter": "#424242",
+    "silverDarker": "#9a9c9f",
+    "bronze": "#caa789",
+    "bronzeLighter": "#4d433b",
+    "bronzeDarker": "#ab825f"
+  }
+}
