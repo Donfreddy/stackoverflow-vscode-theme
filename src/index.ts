@@ -1,21 +1,30 @@
-import { promises as fs } from 'fs';
+import { writeFile, mkdir } from 'fs/promises';
 import getTheme from './theme';
+import { Params } from './types';
 
-const lightTheme = getTheme({
-  theme: 'light',
-  name: 'Stackoverflow Light',
-});
+/**
+ * Generate a theme file
+ *
+ * @param params - The parameters to generate the theme file
+ */
+async function generateTheme(params: Params): Promise<any> {
+  const themePath = `./themes`;
 
-const darkTheme = getTheme({
-  theme: 'dark',
-  name: 'Stackoverflow Dark',
-});
+  try {
+    await mkdir(themePath, { recursive: true });
+    await writeFile(`${themePath}/${params.theme}.json`, JSON.stringify(getTheme(params), null, 2));
+  } catch (err) {
+    process.exit(1);
+  }
+}
 
-fs.mkdir('./themes', { recursive: true })
-  .then(() =>
-    Promise.all([
-      fs.writeFile('./themes/light.json', JSON.stringify(lightTheme, null, 2)),
-      fs.writeFile('./themes/dark.json', JSON.stringify(darkTheme, null, 2)),
-    ]),
-  )
-  .catch(() => process.exit(1));
+// Generate the theme files.
+generateTheme({ theme: 'light', name: 'Stackoverflow Light' });
+generateTheme({ theme: 'dark', name: 'Stackoverflow Dark' });
+
+// Todo: Add this after finish with the dark mode
+// {
+//   "label": "Stackoverflow Light",
+//   "uiTheme": "vs",
+//   "path": "./themes/light.json"
+// },

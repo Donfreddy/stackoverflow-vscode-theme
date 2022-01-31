@@ -6,12 +6,12 @@
 export default {
   data() {
     return {
-      active: true
+      active: true,
     };
   },
   methods: {
-    handleClick() {}
-  }
+    handleClick() {},
+  },
 };
 </script>
 
@@ -19,4 +19,4 @@ export default {
 .css {
   color: salmon;
 }
-</style>
+</style> 

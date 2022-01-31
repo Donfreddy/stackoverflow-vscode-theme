@@ -13,7 +13,12 @@ import lightColors from './light.json';
 import darkColors from './dark.json';
 
 export default function getColors(theme: string) {
-  if (theme === 'light') return lightColors;
-
-  return darkColors;
+  switch (theme) {
+    case 'light':
+      return lightColors;
+    case 'dark':
+      return darkColors;
+    default:
+      throw new Error(`Theme ${theme} is not supported`);
+  }
 }

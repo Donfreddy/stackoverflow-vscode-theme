@@ -16,27 +16,38 @@ export default function getTheme(params: Params) {
     name: params.name,
     type: params.theme,
     colors: {
+      // Editor
       'editor.foreground': color.syntax.color,
       'editor.background': scale.black[1],
 
+      // Status Bar
       'statusBar.foreground': scale.black[8],
       'statusBar.background': scale.black[0],
       'statusBar.border': scale.black[0],
       'statusBar.noFolderBackground': scale.black[0],
-      'statusBar.debuggingForeground': scale.white,
-      'statusBarItem.prominentBackground': scale.black[0],
-      'statusBar.debuggingBackground': scale.orange[4],
-      'statusBarItem.hoverBackground': scale.orange[4],
-      'statusBarItem.prominentHoverBackground': scale.orange[4],
+      'statusBar.debuggingForeground': themes({ light: scale.white, dark: color.syntax.bg }),
+      'statusBar.debuggingBackground': themes({ light: scale.blue[4], dark: scale.blue[5] }),
 
-      // 'activityBar.foreground': '',
-      // 'activityBar.inactiveForeground': scale.black[8],
-      // 'activityBar.background': color.syntax.bg,
-      // 'activityBarBadge.foreground': scale.white,
-      // 'activityBarBadge.background': themes({
-      //   light: scale.orange[4],
-      //   dark: scale.orange[5],
-      // }),
+      // Activity Bar
+      'activityBar.foreground': color.syntax.color,
+      'activityBar.background': scale.black[1],
+      'activityBarBadge.background': scale.orange[4],
+      'activityBarBadge.foreground': themes({ light: scale.white, dark: scale.black[1] }),
+      // 'activityBar.activeBorder': scale.orange[4],
+
+      // Side Bar
+     // 'sideBar.background': scale.black[0],
+      // 'sideBar.foreground': color.syntax.color,
+      // 'sideBar.border': scale.black[0],
+      // 'sideBarTitle.foreground': color.syntax.color,
+      // 'sideBarSectionHeader.background': scale.black[1],
+      // 'sideBarSectionHeader.foreground': color.syntax.color,
+      // 'sideBarSectionHeader.border': scale.black[0],
+      // 'sideBar.dropBackground': scale.black[0],
+      // 'sideBar.dropBackgroundActive': scale.black[0],
+      // 'sideBar.dropBackgroundFocus': scale.black[0],
+      // 'sideBar.dropBackgroundBorder': scale.black[0],
+
     },
     // semanticHighlighting: true,
     tokenColors: [
@@ -45,8 +56,12 @@ export default function getTheme(params: Params) {
         scope: ['comment', 'punctuation.definition.comment'],
         settings: {
           foreground: color.syntax.comment,
+          fontStyle: 'italic',
         },
       },
+
+      // --------------------- Ready Check -----------------------
+
       {
         name: 'Variables',
         scope: ['variable', 'string constant.other.placeholder'],

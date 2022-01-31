@@ -95,7 +95,7 @@
     ]
   },
   "syntax": {
-    "bg": "#1c1b1b",
+    "bg": "#1D1B1B",
     "color": "#fff",
     "comment": "#BBBBBB4D",
     "punctuation": "#ccc",
@@ -108,6 +108,8 @@
     "addition": "#3d8f58",
     "deletion": "#ac2726"
   },
+  "scrollbar": "hsla(0, 0%, 100%, 0.2)",
+  "scrollbarHover": "hsla(0, 0%, 100%, 0.5)",
   "fontColor": {
     "dart": "#0c0cd0e",
     "medium": "#3c4146",

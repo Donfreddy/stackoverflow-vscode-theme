@@ -30,11 +30,6 @@
   "contributes": {
     "themes": [
       {
-        "label": "Stackoverflow Light",
-        "uiTheme": "vs",
-        "path": "./themes/light.json"
-      },
-      {
         "label": "Stackoverflow Dark",
         "uiTheme": "vs-dark",
         "path": "./themes/dark.json"
@@ -45,6 +40,9 @@
     "start:dev": "nodemon",
     "start": "yarn build && node build/index.js",
     "build": "rimraf ./build && tsc"
+  },
+  "dependencies": {
+    "@stackoverflow/stacks": "^0.73.1"
   },
   "devDependencies": {
     "@types/node": "^16.4.2",
