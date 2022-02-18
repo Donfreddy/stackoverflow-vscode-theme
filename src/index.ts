@@ -19,12 +19,5 @@ async function generateTheme(params: Params): Promise<any> {
 }
 
 // Generate the theme files.
-generateTheme({ theme: 'light', name: 'Stackoverflow Light' });
 generateTheme({ theme: 'dark', name: 'Stackoverflow Dark' });
-
-// Todo: Add this after finish with the dark mode
-// {
-//   "label": "Stackoverflow Light",
-//   "uiTheme": "vs",
-//   "path": "./themes/light.json"
-// },
+// generateTheme({ theme: 'light', name: 'Stackoverflow Light' });

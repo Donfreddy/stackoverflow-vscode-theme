@@ -7,7 +7,7 @@ $diff = time() - $start;
  
 print "This page needed $diff seconds to load :-)";
 
-class Thing extends Inherited
+class Thing
 {
   public function DoSomething() {}
 }

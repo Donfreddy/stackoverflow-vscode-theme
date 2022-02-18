@@ -108,8 +108,6 @@
     "addition": "#3d8f58",
     "deletion": "#ac2726"
   },
-  "scrollbar": "hsla(0, 0%, 100%, 0.2)",
-  "scrollbarHover": "hsla(0, 0%, 100%, 0.5)",
   "fontColor": {
     "dart": "#0c0cd0e",
     "medium": "#3c4146",

@@ -19,11 +19,13 @@ export default function getTheme(params: Params) {
       // Editor
       'editor.foreground': color.syntax.color,
       'editor.background': scale.black[1],
+      'editor.selectionBackground': scale.black[2],
+      'editorLineNumber.foreground': color.syntax.comment,
 
       // Status Bar
       'statusBar.foreground': scale.black[8],
       'statusBar.background': scale.black[0],
-      'statusBar.border': scale.black[0],
+      'statusBar.border': scale.black[1],
       'statusBar.noFolderBackground': scale.black[0],
       'statusBar.debuggingForeground': themes({ light: scale.white, dark: color.syntax.bg }),
       'statusBar.debuggingBackground': themes({ light: scale.blue[4], dark: scale.blue[5] }),
@@ -33,21 +35,50 @@ export default function getTheme(params: Params) {
       'activityBar.background': scale.black[1],
       'activityBarBadge.background': scale.orange[4],
       'activityBarBadge.foreground': themes({ light: scale.white, dark: scale.black[1] }),
-      // 'activityBar.activeBorder': scale.orange[4],
+      'activityBar.activeBorder': scale.orange[4],
+      'activityBar.activeBorderFocus': scale.orange[4],
+      'activityBar.activeBackground': scale.black[2],
 
       // Side Bar
-     // 'sideBar.background': scale.black[0],
-      // 'sideBar.foreground': color.syntax.color,
-      // 'sideBar.border': scale.black[0],
-      // 'sideBarTitle.foreground': color.syntax.color,
-      // 'sideBarSectionHeader.background': scale.black[1],
-      // 'sideBarSectionHeader.foreground': color.syntax.color,
-      // 'sideBarSectionHeader.border': scale.black[0],
-      // 'sideBar.dropBackground': scale.black[0],
-      // 'sideBar.dropBackgroundActive': scale.black[0],
-      // 'sideBar.dropBackgroundFocus': scale.black[0],
-      // 'sideBar.dropBackgroundBorder': scale.black[0],
+      'sideBar.background': scale.black[1],
+      'sideBar.foreground': color.syntax.color,
+      'sideBar.border': scale.black[1],
+      'sideBarTitle.foreground': color.syntax.color,
+      'sideBarSectionHeader.background': scale.black[1],
+      'sideBarSectionHeader.foreground': color.syntax.color,
+      'sideBarSectionHeader.border': scale.black[1],
 
+      // Editor Group & Tabs
+      'editorGroupHeader.tabsBackground': scale.black[1],
+      'editorGroupHeader.tabsBorder': scale.black[1],
+      'editorGroup.border': scale.red[4],
+      'tab.activeBackground': scale.black[2],
+      'tab.activeForeground': color.syntax.color,
+      'tab.activeBorderTop': scale.orange[4],
+      'tab.inactiveBackground': scale.black[1],
+      'tab.border': scale.black[0],
+
+      // Breadcrumbs
+      'breadcrumb.foreground': color.syntax.comment,
+      'breadcrumb.focusForeground': color.syntax.color,
+      'breadcrumb.activeSelectionForeground': color.syntax.color,
+      // 'breadcrumbPicker.background': scale.black[1],
+
+      // Scroll Bar
+      // 'scrollbar.shadow': scale.red[0],
+      'scrollbarSlider.background': color.scrollbar,
+      // 'scrollbarSlider.hoverBackground': scale.black[2],
+      // 'scrollbarSlider.activeBackground': scale.black[3],
+      // 'scrollbar.thumb': scale.black[1],
+      // 'scrollbar.thumbHover': scale.black[2],
+      // 'scrollbar.thumbActive': scale.black[3],
+      'scrollbar.background': scale.red[1],
+      // 'scrollbar.hoverBackground': scale.black[2],
+      // 'scrollbar.activeBackground': scale.black[3],
+
+      // Panel
+      'panel.border': scale.black[1],
+      'panelTitle.activeBorder': scale.orange[4],
     },
     // semanticHighlighting: true,
     tokenColors: [
