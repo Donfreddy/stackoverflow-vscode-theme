@@ -4,7 +4,20 @@ const string = 'string';
 const template = `something${something}something${something()}`;
 const regex = /^abc|def[A-Z]$/gim;
 
-// comment
+
+/**
+ * Je suis un commentaire de plusieurs lignes
+ * 
+ * @param {string} param
+ * @param {string} param
+ * @returns {string}
+ *  
+ * @example
+ * const a = 'a';
+ * const b = 'b';
+ * const c = 'c';
+ * const d = 'd';
+ */
 
 class Class {
   constructor() {

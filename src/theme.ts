@@ -51,7 +51,7 @@ export default function getTheme(params: Params) {
       // Editor Group & Tabs
       'editorGroupHeader.tabsBackground': scale.black[1],
       'editorGroupHeader.tabsBorder': scale.black[1],
-      'editorGroup.border': scale.red[4],
+      // 'editorGroup.border': scale.red[4],
       'tab.activeBackground': scale.black[2],
       'tab.activeForeground': color.syntax.color,
       'tab.activeBorderTop': scale.orange[4],
@@ -64,18 +64,6 @@ export default function getTheme(params: Params) {
       'breadcrumb.activeSelectionForeground': color.syntax.color,
       // 'breadcrumbPicker.background': scale.black[1],
 
-      // Scroll Bar
-      // 'scrollbar.shadow': scale.red[0],
-      // 'scrollbarSlider.background': color.scrollbar,
-      // 'scrollbarSlider.hoverBackground': scale.black[2],
-      // 'scrollbarSlider.activeBackground': scale.black[3],
-      // 'scrollbar.thumb': scale.black[1],
-      // 'scrollbar.thumbHover': scale.black[2],
-      // 'scrollbar.thumbActive': scale.black[3],
-      'scrollbar.background': scale.red[1],
-      // 'scrollbar.hoverBackground': scale.black[2],
-      // 'scrollbar.activeBackground': scale.black[3],
-
       // Panel
       'panel.border': scale.black[1],
       'panelTitle.activeBorder': scale.orange[4],
@@ -86,7 +74,7 @@ export default function getTheme(params: Params) {
         name: 'Comment',
         scope: ['comment', 'punctuation.definition.comment'],
         settings: {
-          foreground: color.syntax.comment,
+          foreground: '#808080',
           fontStyle: 'italic',
         },
       },
@@ -97,7 +85,7 @@ export default function getTheme(params: Params) {
         name: 'Variables',
         scope: ['variable', 'string constant.other.placeholder'],
         settings: {
-          foreground: scale.blue[5],
+          foreground: scale.blue[4],
         },
       },
       {
