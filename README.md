@@ -28,7 +28,7 @@ This theme is based on the [Stackoverflow](https://stackoverflow.com) theme.
 
 ## Contributing and Issues
 
-If you want to contribute to this theme, please follow the [contributing guide](CONTRIBUTING.md) and make sure to update the [CHANGELOG.md](CHANGELOG.md) file with your changes. For any questions, please open an issue on [GitHub](https//github.com/Donfreddy/stackoverflow-vscode-theme/issues).
+If you want to contribute to this theme, please follow the [contributing guide](CONTRIBUTING.md) and make sure to update the [CHANGELOG.md](CHANGELOG.md) file with your changes. For any questions, please open an issue on [GitHub](https://github.com/Donfreddy/stackoverflow-vscode-theme/issues).
 
 ## Author
 
