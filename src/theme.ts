@@ -66,7 +66,7 @@ export default function getTheme(params: Params) {
 
       // Scroll Bar
       // 'scrollbar.shadow': scale.red[0],
-      'scrollbarSlider.background': color.scrollbar,
+      // 'scrollbarSlider.background': color.scrollbar,
       // 'scrollbarSlider.hoverBackground': scale.black[2],
       // 'scrollbarSlider.activeBackground': scale.black[3],
       // 'scrollbar.thumb': scale.black[1],

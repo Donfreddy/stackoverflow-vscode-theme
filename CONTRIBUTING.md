@@ -6,7 +6,7 @@ Thank you for investing your time in contributing to our project!
 
 In this guide you will get an overview of the contribution workflow from opening an issue and creating a PR.
 
-The following steps will guide you through the process of contributing to the project. If you have any questions, please open an issue on [GitHub](https//github.com/Donfreddy/stackoverflow-vscode-theme/issues) and we will get back to you as soon as possible.
+The following steps will guide you through the process of contributing to the project. If you have any questions, please [open an issue](https//github.com/Donfreddy/stackoverflow-vscode-theme/issues) and we will get back to you as soon as possible.
 
 1. Create a pull request.
 2. Run `yarn` to install dependencies.
